@@ -7,18 +7,43 @@
     <link rel="stylesheet" href="style.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f5f5f5;
             color: #333;
         }
 
         header {
-            background: linear-gradient(to right, #4CAF50, #3E4E5C);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(to bottom right, #283E51, #4A667A);
             color: white;
-            padding: 60px 20px;
+            padding: 40px 20px;
             text-align: center;
+        }
+
+        header img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            margin-right: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header .intro {
+            flex: 2;
+        }
+
+        header .intro h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: #FFDD93;
+        }
+
+        header .intro p {
+            font-size: 1.2rem;
         }
 
         nav {
@@ -26,12 +51,13 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         nav ul {
             list-style: none;
             margin: 0;
-            padding: 10px;
+            padding: 0;
             display: flex;
             justify-content: center;
         }
@@ -43,65 +69,104 @@
         nav ul li a {
             color: white;
             text-decoration: none;
-            padding: 5px 10px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
 
         nav ul li a:hover {
-            background: #575757;
-            border-radius: 5px;
+            background-color: #575757;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         section {
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 900px;
-            background: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         section h2 {
-            color: #4CAF50;
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 10px;
+            color: #283E51;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-card img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
         }
 
         footer {
-            background: #333;
+            background: #283E51;
             color: white;
             text-align: center;
-            padding: 10px 0;
-            margin-top: 20px;
+            padding: 20px;
+            margin-top: 40px;
         }
 
         .btn {
             display: inline-block;
-            background: #4CAF50;
-            color: white;
+            background: #FFDD93;
+            color: #283E51;
             padding: 10px 20px;
             text-decoration: none;
             border-radius: 5px;
             margin-top: 10px;
+            transition: background-color 0.3s ease;
         }
 
         .btn:hover {
-            background: #45a049;
+            background: #FFC45C;
         }
 
-        .project img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-            margin-bottom: 10px;
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            header img {
+                margin-bottom: 20px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Sai Manoj Bera</h1>
-        <p>AI Engineer | Data Scientist | ETL Specialist</p>
-        <p>Building scalable AI solutions for impactful insights.</p>
-        <a href="SaimanojBera_Resume.pdf" class="btn">Download Resume</a>
+        <img src="profile.jpg" alt="Sai Manoj Bera">
+        <div class="intro">
+            <h1>SaiManoj Bera</h1>
+            <p>AI Engineer | Data Scientist | ETL Specialist</p>
+            <p>Building scalable AI solutions for impactful insights.</p>
+            <a href="SaimanojBera_Resume.pdf" class="btn">Download Resume</a>
+        </div>
     </header>
 
     <nav>
@@ -109,6 +174,7 @@
             <li><a href="#about">About Me</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -122,15 +188,17 @@
 
         <section id="projects">
             <h2>Projects</h2>
-            <div class="project">
-                <h3>Aqua Robot for Dead Shrimp Detection</h3>
-                <p>Using TensorFlow and OpenCV to improve aquatic health monitoring. Achieved a 98% improvement in accuracy.</p>
-                <a href="https://github.com/saimanoj/shrimp" class="btn">View on GitHub</a>
-            </div>
-            <div class="project">
-                <h3>Diabetic Retinopathy Detection Tool</h3>
-                <p>Leveraged deep learning to achieve 90% diagnostic accuracy for timely medical interventions.</p>
-                <a href="https://github.com/saimanojbera/diabetic_retinopathy" class="btn">View on GitHub</a>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Aqua Robot for Dead Shrimp Detection</h3>
+                    <p>Using TensorFlow and OpenCV to improve aquatic health monitoring. Achieved a 98% improvement in accuracy.</p>
+                    <a href="https://github.com/saimanojbera/shrimp" class="btn">View on GitHub</a>
+                </div>
+                <div class="project-card">
+                    <h3>Diabetic Retinopathy Detection Tool</h3>
+                    <p>Leveraged deep learning to achieve 90% diagnostic accuracy for timely medical interventions.</p>
+                    <a href="https://github.com/saimanojbera/diabetic_retinopathy" class="btn">View on GitHub</a>
+                </div>
             </div>
         </section>
 
@@ -144,6 +212,38 @@
             </ul>
         </section>
 
+        <section id="education">
+            <h2>Education</h2>
+            <div class="education">
+                <div class="education-card">
+                    <h3>Master in Data Science</h3>
+                    <p><strong>University of Michigan, Dearborn</strong></p>
+                    <p>2022 - 2024</p>
+                    <ul>
+                        <li>Big Data Analytics & Visualization</li>
+                        <li>Deep Learning</li>
+                        <li>Machine Learning</li>
+                        <li>Neural Networks</li>
+                        <li>Large Language Models</li>
+                        <li>Database Management Systems</li>
+                    </ul>
+                </div>
+                <div class="education-card">
+                    <h3>B. Tech in Computer Science and Engineering</h3>
+                    <p><strong>V R Siddhartha Engineering College, Vijayawada</strong></p>
+                    <p>2016 - 2020</p>
+                    <ul>
+                        <li>Data Structures</li>
+                        <li>Programming in C</li>
+                        <li>Programming in Python</li>
+                        <li>Object-Oriented Programming Using Java</li>
+                        <li>Database Systems</li>
+                        <li>Cloud Computing</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
         <section id="contact">
             <h2>Contact Me</h2>
             <p>Email: <a href="mailto:saimanoj2509@gmail.com">saimanoj2509@gmail.com</a></p>
@@ -153,7 +253,7 @@
     </main>
 
     <footer>
-        <p>© 2024 SaiManoj Bera. Built with ❤️ and hosted on GitHub Pages.</p>
+        <p>© 2024 Sai Manoj Bera. Built with ❤️ and hosted on GitHub Pages.</p>
     </footer>
 </body>
 </html>
