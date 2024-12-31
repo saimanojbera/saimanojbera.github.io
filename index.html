@@ -156,6 +156,70 @@
                 margin-bottom: 20px;
             }
         }
+		
+		.about-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0;
+}
+
+.about-text {
+    flex: 1;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+#work-experience {
+    margin-top: 40px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#work-experience h2 {
+    color: #283E51;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.work-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.job h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #283E51;
+}
+
+.job p {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+.job ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    line-height: 1.6;
+}
+
+.job ul li {
+    margin-bottom: 10px;
+}
+
     </style>
 </head>
 <body>
@@ -176,6 +240,10 @@
             <li><a href="#skills">Skills</a></li>
             <li><a href="#education">Education</a></li>
             <li><a href="#contact">Contact</a></li>
+			<li><a href="#certifications">Certifications</a></li>
+			<li><a href="#work-experience">Work Experience</a></li>
+
+
         </ul>
     </nav>
 
@@ -255,6 +323,59 @@
                 </div>
             </div>
         </section>
+		
+		<section id="work-experience">
+    <h2>Work Experience</h2>
+    <div class="work-container">
+        <div class="job">
+            <h3>AI Engineer / Prompt Engineer</h3>
+            <p><strong>Outlier AI, Remote, USA</strong> | May 2024 - Present</p>
+            <ul>
+                <li>Designed high-precision prompts to increase AI model accuracy by 20%, enhancing relevance in business applications.</li>
+                <li>Collaborated with data science teams to align prompt strategies with business objectives, driving impactful AI output.</li>
+                <li>Minimized biases and improved adaptability through iterative prompt engineering for diverse use cases.</li>
+                <li>Optimized prompt variations to improve model interpretability, reducing response time by 15%.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <h3>Data Engineer – ETL Specialist</h3>
+            <p><strong>Tata Consultancy Services, Bengaluru, India</strong> | Oct 2020 - July 2022</p>
+            <ul>
+                <li>Engineered advanced data mappings and transformations, reducing processing time by 30% through optimized workflows.</li>
+                <li>Built robust data validation protocols, increasing the accuracy of analytical data by 25%.</li>
+                <li>Automated ETL processes using Python and Shell scripting, reducing manual effort by 40%.</li>
+                <li>Integrated advanced data validation techniques to improve data quality and integrity.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <h3>Data Science Analyst</h3>
+            <p><strong>Indian Servers, Vijayawada, India</strong> | May 2019 - Sept 2020</p>
+            <ul>
+                <li>Contributed to impactful healthcare and agriculture projects using deep learning and computer vision techniques.</li>
+                <li>Developed scalable data pipelines in Cloud SQL, improving data reliability and accessibility.</li>
+                <li>Collaborated on data modeling and dashboarding using Tableau and Power BI to derive meaningful insights.</li>
+                <li>Integrated machine learning models into data workflows for predictive analytics, enabling decision-making.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+		
+		<section id="certifications">
+    <h2>Certifications</h2>
+    <ul>
+        <li>AWS Certified Cloud Practitioner</li>
+        <li>IBM Python for Data Science</li>
+        <li>Programming, Data Structures, and Algorithms in Python (NPTEL)</li>
+        <li>Database Management Systems (NPTEL)</li>
+        <li>Programming in C (CISCO)</li>
+        <li>Programming in Python (CISCO)</li>
+        <li>Cyber Security (CISCO)</li>
+    </ul>
+</section>
+
 
         <section id="contact">
             <h2>Contact Me</h2>
